@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var path = require("path");
@@ -46,3 +47,26 @@ module.exports = {
         })
     ]
 }
+=======
+var webpack = require('webpack');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
+
+var stylusLoader = ExtractTextPlugin.extract("style-loader", "css-loader!stylus-loader");
+
+module.exports = {
+    entry: "./index.js",
+    output: {
+        path: "./dist",
+        filename: "[name].js"
+    },
+    module: {
+        loaders: [{
+            test: /\.styl$/,
+            loader: stylusLoader
+        }]
+    },
+    plugins: [
+        new ExtractTextPlugin("[name].css")
+    ]
+};
+>>>>>>> 1dfef79de8683d079aa8de66b7aa147055e603da
