@@ -1,3 +1,3 @@
-const css = require('./app.scss');
+const css = require('./app.styl');
 
 console.log('Hello from app.js!');

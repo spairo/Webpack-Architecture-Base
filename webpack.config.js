@@ -11,12 +11,16 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.scss$/, 
+                test: /\.styl$/,
                 use: ExtractTextPlugin.extract({
                     fallbackLoader: 'style-loader',
-                    loader: ['css-loader','sass-loader'],
+                    loader: ['css-loader','stylus-loader'],
                     publicPath: '/dist'
                 })
+            },
+            {
+                test: /\.pug$/,
+                loader: ['html-loader','pug-html-loader'],
             }
         ]
     },
@@ -28,12 +32,12 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            title: 'Project Demo',
+            title: 'Project Base',
             // minify: {
             //     collapseWhitespace: true
             // },
             hash: true,
-            template: './src/index.html', // Load a custom template (ejs by default see the FAQ for details)
+            template: './src/index.pug', // Load a custom template (ejs by default see the FAQ for details)
         }),
         new ExtractTextPlugin({
             filename: 'app.css',

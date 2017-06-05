@@ -1,21 +1,28 @@
 {
   "name": "webpack-starter",
   "version": "1.0.0",
-  "description": "Webpack project starter.",
+  "description": "Webpack Architecture Base",
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server",
     "prod": "webpack -p"
   },
-  "author": "Petr Tichy",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/spairo/webpack-example-stylus.git"
+  },
+  "author": "spairo",
   "license": "ISC",
   "devDependencies": {
     "css-loader": "^0.26.1",
     "extract-text-webpack-plugin": "^2.0.0-rc.0",
+    "html-loader": "^0.4.5",
     "html-webpack-plugin": "^2.26.0",
-    "node-sass": "^4.4.0",
-    "sass-loader": "^4.1.1",
+    "pug": "^2.0.0-rc.2",
+    "pug-html-loader": "^1.1.4",
     "style-loader": "^0.13.1",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^2.5.1",
     "webpack": "^2.2.0",
     "webpack-dev-server": "^2.2.0"
   }
