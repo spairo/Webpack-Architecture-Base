@@ -17,4 +17,4 @@ Webpack Dev/prod Server
 3. Run `npm run dev`
 4. New browser window should open with a green text on pink background.
 
-# enjoy :)
+# enjoy :) spairo

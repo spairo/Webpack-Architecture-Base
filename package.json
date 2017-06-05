@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/spairo/webpack-example-stylus.git"
+    "url": "https://github.com/spairo/Webpack-Architecture-Base"
   },
   "author": "spairo",
   "license": "ISC",
