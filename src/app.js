@@ -1,3 +1,1 @@
-const css = require('./app.styl');
-
-console.log('Hello from app.js!');
+const css = require('!css!stylus!./app.styl');

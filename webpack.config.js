@@ -10,18 +10,35 @@ module.exports = {
     },
     module: {
         rules: [
-            {
-                test: /\.styl$/,
-                use: ExtractTextPlugin.extract({
-                    fallbackLoader: 'style-loader',
-                    loader: ['css-loader','stylus-loader'],
-                    publicPath: '/dist'
-                })
-            },
-            {
+						/*
+						{
+							test: /\.styl$/,
+							use: ExtractTextPlugin.extract({
+									fallbackLoader: 'style-loader',
+									loader: ['css-loader','stylus-loader'],
+									publicPath: '/dist'
+							})
+						},*/
+						{
+							use: [
+								"style",
+								"style-loader",
+								"css",
+								"css-loader"
+							]
+						},
+						{
+								test: /\.styl$/,
+								loader: 'style-loader!css-loader!stylus-loader'
+						},
+						{
                 test: /\.pug$/,
-                loader: ['html-loader','pug-html-loader'],
-            }
+                loader: ['html-loader','pug-html-loader']
+						},
+						{
+								test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)$/,
+								loader: 'file-loader?name=assets/[name].[ext]'
+						}
         ]
     },
     devServer: {
@@ -32,17 +49,14 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            title: 'Project Base',
-            // minify: {
-            //     collapseWhitespace: true
-            // },
-            hash: true,
-            template: './src/index.pug', // Load a custom template (ejs by default see the FAQ for details)
+						hash: true,
+						compress: false,
+            template: './src/index.pug'
         }),
         new ExtractTextPlugin({
             filename: 'app.css',
             disable: false,
             allChunks: true
-        })
+				})
     ]
 }

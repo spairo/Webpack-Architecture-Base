@@ -1,7 +1,7 @@
 {
   "name": "webpack-starter",
-  "version": "1.0.0",
-  "description": "Webpack Architecture Base",
+  "version": "1.2.0",
+  "description": "Webpack2 Architecture Base",
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server",
@@ -14,16 +14,17 @@
   "author": "spairo",
   "license": "ISC",
   "devDependencies": {
-    "css-loader": "^0.26.1",
-    "extract-text-webpack-plugin": "^2.0.0-rc.0",
-    "html-loader": "^0.4.5",
-    "html-webpack-plugin": "^2.26.0",
-    "pug": "^2.0.0-rc.2",
-    "pug-html-loader": "^1.1.4",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "html-loader": "^0.5.1",
+		"html-webpack-plugin": "^2.29.0",
+		"file-loader": "^1.1.5",
+    "pug": "^2.0.0-rc.4",
+		"pug-html-loader": "^1.1.5",
+		"css-loader": "^0.28.7",
     "style-loader": "^0.13.1",
     "stylus": "^0.54.5",
-    "stylus-loader": "^2.5.1",
-    "webpack": "^2.2.0",
-    "webpack-dev-server": "^2.2.0"
+		"stylus-loader": "^3.0.1",
+    "webpack": "^3.8.1",
+    "webpack-dev-server": "^2.9.4"
   }
 }

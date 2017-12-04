@@ -1,16 +1,18 @@
+include ./pug/mixins/mixins
+
 doctype html
-html(lang="en")
-  head
-    title foo
-    script(type='text/javascript').
-      if (foo) bar(1 + 5)
-  body
-    h1 Pug - node template engine
-    #container.col
-      if youAreUsingPug
-        p You are amazing foo
-      else
-        p Get on it
-      p.
-        Pug is a terse and simple templating language with a
-        strong focus on performance and powerful features.
+html(lang = "es-MX")
+	head
+		title mypage
+
+		meta(charset = "utf-8")
+		meta(name = "viewport" content = "width=device-width, initial-scale=1, shrink-to-fit=no")
+		meta(name="description" content="")
+		
+
+	body
+		include ./pug/includes/nav
+		
+
+
+		script(src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous")

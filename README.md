@@ -2,8 +2,9 @@
 
 Webpack Architecture Base
 
-## Stack
+## Loaders
 html-loader
+file-loader
 css-loader
 stylus-loader
 pug-html-loader
