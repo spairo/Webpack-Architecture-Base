@@ -1,1 +1,1 @@
-const css = require('!css!stylus!./app.styl');
+const css = require('./app.styl');

@@ -20,14 +20,6 @@ module.exports = {
 							})
 						},*/
 						{
-							use: [
-								"style",
-								"style-loader",
-								"css",
-								"css-loader"
-							]
-						},
-						{
 								test: /\.styl$/,
 								loader: 'style-loader!css-loader!stylus-loader'
 						},
