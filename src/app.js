@@ -1,1 +1,1 @@
-const css = require('./app.styl');
+const css = require('./styles/app.styl');
