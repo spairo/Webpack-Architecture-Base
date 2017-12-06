@@ -18,19 +18,26 @@ module.exports = {
 						loader: ['css-loader','stylus-loader'],
 						publicPath: '/dist'
 				})
-			},*/
+			},
+			test: /\.css$/,
+      use: [ 'style-loader', 'css-loader' ]
 			{
 				test: /\.css$/,
 				loader: 'css-loader', options: { minimize: false }
-			},/*
+			},
+
+			https://blog.angularindepth.com/this-is-how-angular-cli-webpack-delivers-your-css-styles-to-the-client-d4adf15c4975
+			*/
+			{
+				test: /\.css$/,
+				use: [
+						"style-loader",
+						"css-loader"
+				]
+			},
 			{
 				test: /\.styl$/,
 				loader: 'style-loader!css-loader!stylus-loader'
-			},*/
-			{
-				test: /\.styl$/,
-				use: ExtractTextPlugin.extract({
-				})
 			},
 			{
 				test: /\.pug$/,
@@ -44,7 +51,7 @@ module.exports = {
 	},
 	devServer: {
 			contentBase: path.join(__dirname, "dist"),
-			compress: false,
+			compress: true,
 			stats: "errors-only",
 			open: true
 	},
