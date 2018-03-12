@@ -1,44 +1,23 @@
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var path = require("path");
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
+var HtmlWebpackPlugin = require('html-webpack-plugin');
+
 
 module.exports = {
 	entry: './src/app.js',
 	output: {
 		path: path.resolve(__dirname, "dist"),
-		filename: 'app.bundle.js'
+		filename: '[name].bundle.js',
+		chunkFilename: '[name].js'
 	},
 	module: {
 		rules: [
-			/*
 			{
-				test: /\.styl$/,
-				use: ExtractTextPlugin.extract({
-						fallbackLoader: 'style-loader',
-						loader: ['css-loader','stylus-loader'],
-						publicPath: '/dist'
-				})
-			},
-			test: /\.css$/,
-      use: [ 'style-loader', 'css-loader' ]
-			{
-				test: /\.css$/,
-				loader: 'css-loader', options: { minimize: false }
-			},
-
-			https://blog.angularindepth.com/this-is-how-angular-cli-webpack-delivers-your-css-styles-to-the-client-d4adf15c4975
-			*/
-			{
-				test: /\.css$/,
-				use: ExtractTextPlugin.extract({
-					use: 'css-loader',
-					fallback: 'style-loader'
-				})
-			},
-			{
-				test: /\.styl$/,
-				loader: 'style-loader!css-loader!stylus-loader'
-			},
+        test: /.styl$/,
+        use: ExtractTextPlugin.extract({fallback: 'style-loader',
+          use: ['css-loader', 'stylus-loader']
+        })
+      },
 			{
 				test: /\.pug$/,
 				loader: ['html-loader','pug-html-loader']
@@ -58,13 +37,9 @@ module.exports = {
 	plugins: [
 			new HtmlWebpackPlugin({
 					hash: true,
-					compress: false,
+					compress: true,
 					template: './src/index.pug'
 			}),
-			new ExtractTextPlugin({
-				filename: 'app.css',
-				disable: false,
-				allChunks: true
-			})
+			new ExtractTextPlugin("app.css"),
 	]
 }
